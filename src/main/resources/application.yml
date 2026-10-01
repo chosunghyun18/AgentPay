@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: agentpay
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/agentpay}
+    username: ${DB_USERNAME:agentpay}
+    password: ${DB_PASSWORD:agentpay}
+  jpa:
+    hibernate:
+      ddl-auto: validate   # 스키마는 Flyway가 소유
+    open-in-view: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+agentpay:
+  payment:
+    intent-ttl: PT30M        # PaymentIntent 만료 시간 (승인 대기 포함)
+    daily-limit-zone: Asia/Seoul  # 일일 한도 집계 기준 시간대
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

@@ -1,0 +1,10 @@
+# 로컬 개발용 PostgreSQL (테스트에는 필요 없음 — 테스트는 H2 사용)
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: agentpay
+      POSTGRES_USER: agentpay
+      POSTGRES_PASSWORD: agentpay
+    ports:
+      - "5432:5432"

@@ -1,0 +1,19 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+out/
+bin/
+
+# macOS
+.DS_Store
+
+# Env / secrets
+.env
+*.local.yml
+application-local.yml
